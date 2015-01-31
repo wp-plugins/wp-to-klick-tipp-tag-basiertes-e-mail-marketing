@@ -1,0 +1,298 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Wordpress to Klick-Tipp v1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2015-01-13 11:56:56+0000\n"
+"Last-Translator: Timo König <dev@timokoenig.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: inc/class.wp-to-klick-tipp-admin.php:62
+#@ wptkt
+msgid "WP To Klick-Tipp"
+msgstr ""
+
+#: inc/class.wp-to-klick-tipp-admin.php:128
+#@ wptkt
+msgid "Time is reset, next cron will update all orders to Klick-Tipp"
+msgstr ""
+
+#: inc/class.wp-to-klick-tipp-admin.php:137
+#@ wptkt
+msgid "Please enter your email address."
+msgstr ""
+
+#: inc/class.wp-to-klick-tipp-admin.php:139
+#@ wptkt
+msgid "Please enter your license key."
+msgstr ""
+
+#: inc/class.wp-to-klick-tipp-admin.php:146
+#@ wptkt
+msgid "Saved Successfully"
+msgstr ""
+
+#: inc/class.wp-to-klick-tipp-admin.php:150
+#@ wptkt
+msgid "Wrong API Credentials"
+msgstr ""
+
+#: inc/class.wp-to-klick-tipp-admin.php:160
+#@ wptkt
+msgid "Please enter your Klick-Tipp username."
+msgstr ""
+
+#: inc/class.wp-to-klick-tipp-admin.php:162
+#@ wptkt
+msgid "Please enter your Klick-Tipp password."
+msgstr ""
+
+#: inc/class.wp-to-klick-tipp-admin.php:169
+#@ wptkt
+msgid "Klick-Tipp Account Saved Successfully"
+msgstr ""
+
+#: inc/class.wp-to-klick-tipp-admin.php:171
+#@ wptkt
+msgid "Wrong Klick-Tipp Credentials"
+msgstr ""
+
+#: inc/class.wp-to-klick-tipp-admin.php:186
+#@ wptkt
+msgid "Cron Settings Saved Successfully"
+msgstr ""
+
+#: inc/class.wp-to-klick-tipp-admin.php:261
+#: view/admin-license.phtml:3
+#@ wptkt
+msgid "License"
+msgstr ""
+
+#: inc/class.wp-to-klick-tipp-admin.php:266
+#: view/admin-account.phtml:3
+#@ wptkt
+msgid "Klick-Tipp Account"
+msgstr ""
+
+#: inc/class.wp-to-klick-tipp-admin.php:271
+#: view/admin-cron.phtml:5
+#@ wptkt
+msgid "Cron Settings"
+msgstr ""
+
+#: inc/class.wp-to-klick-tipp-admin.php:276
+#: view/admin-role.phtml:5
+#@ wptkt
+msgid "Role Settings"
+msgstr ""
+
+#: inc/class.wp-to-klick-tipp-admin.php:308
+#@ wptkt
+msgid "Not transferred any data to Klick-Tipp."
+msgstr ""
+
+#: inc/class.wp-to-klick-tipp-admin.php:350
+#@ wptkt
+msgid "Free Version, <a target=\"_blank\" href=\"http://woocommerce-klick-tipp.com\">Upgrade to Pro to get full data sync</a>"
+msgstr ""
+
+#: inc/class.wp-to-klick-tipp-admin.php:352
+#@ wptkt
+msgid "Premium Version active"
+msgstr ""
+
+#: inc/class.wp-to-klick-tipp-cron-manager.php:69
+#@ wptkt
+msgid "times/hour"
+msgstr ""
+
+#: view/admin-account.phtml:9
+#@ wptkt
+msgid "Username"
+msgstr ""
+
+#: view/admin-account.phtml:17
+#@ wptkt
+msgid "Password"
+msgstr ""
+
+#: view/admin-account.phtml:26
+#@ wptkt
+msgid "Save Account"
+msgstr ""
+
+#: view/admin-account.phtml:31
+#@ wptkt
+msgid "Don't have an Klick-Tipp Account?"
+msgstr ""
+
+#: view/admin-account.phtml:33
+#@ wptkt
+msgid "Get a new Account"
+msgstr ""
+
+#: view/admin-account.phtml:36
+#@ wptkt
+msgid "Special Offer"
+msgstr ""
+
+#: view/admin-account.phtml:37
+#@ wptkt
+msgid "1€ for all packets for the first month when you finish the webinar."
+msgstr ""
+
+#: view/admin-account.phtml:38
+#@ wptkt
+msgid "Watch Webinar"
+msgstr ""
+
+#: view/admin-cron.phtml:11
+#@ wptkt
+msgid "Last Sync to Klick-Tipp"
+msgstr ""
+
+#: view/admin-cron.phtml:21
+#: view/admin-cron.phtml:25
+#@ wptkt
+msgid "Reset Sync Time"
+msgstr ""
+
+#: view/admin-cron.phtml:31
+#@ wptkt
+msgid "Use WordPress-Cron"
+msgstr ""
+
+#: view/admin-license.phtml:10
+#@ wptkt
+msgid "Enter your License here:"
+msgstr ""
+
+#: view/admin-license.phtml:16
+#@ wptkt
+msgid "Email"
+msgstr ""
+
+#: view/admin-license.phtml:24
+#@ wptkt
+msgid "License Key"
+msgstr ""
+
+#: view/admin-license.phtml:33
+#@ wptkt
+msgid "Save License"
+msgstr ""
+
+#: view/admin-license.phtml:37
+#@ wptkt
+msgid "Get an additional license key on <a target=\"_blank\" href=\"http://woocommerce-klick-tipp.com\">woocommerce-klick-tipp.com</a>"
+msgstr ""
+
+#: view/admin-role.phtml:11
+#@ wptkt
+msgid "Role"
+msgstr ""
+
+#: view/admin-role.phtml:14
+#@ wptkt
+msgid "Enable"
+msgstr ""
+
+#: view/admin-role.phtml:17
+#@ wptkt
+msgid "Double-Opt-In-Process-Id"
+msgstr ""
+
+#: view/admin-cron.phtml:64
+#: view/admin-role.phtml:36
+#@ wptkt
+msgid "Save Changes"
+msgstr ""
+
+#: view/admin.phtml:3
+#@ wptkt
+msgid "WordPress to <span>Klick-Tipp Bridge</span>"
+msgstr ""
+
+#: view/admin.phtml:9
+#@ wptkt
+msgid "Sync is deactivated. Enter your correct Klick-Tipp credentials."
+msgstr ""
+
+#. translators: plugin header field 'Name'
+#: wp-to-klick-tipp.php:0
+#@ wptkt
+msgid "Wordpress to Klick-Tipp"
+msgstr ""
+
+#. translators: plugin header field 'Description'
+#: wp-to-klick-tipp.php:0
+#@ wptkt
+msgid "Sync user data between Wordpress / WooCommerce and Klick-Tipp (tag based e-mail marketing)"
+msgstr ""
+
+#. translators: plugin header field 'Author'
+#: wp-to-klick-tipp.php:0
+#@ wptkt
+msgid "Tobias B. Conrad, Timo König"
+msgstr ""
+
+#. translators: plugin header field 'AuthorURI'
+#: wp-to-klick-tipp.php:0
+#@ wptkt
+msgid "http://www.leupus.de/, http://www.timokoenig.de"
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: wp-to-klick-tipp.php:0
+#@ wptkt
+msgid "1.0.0"
+msgstr ""
+
+#: view/admin-cron.phtml:35
+#@ wptkt
+msgid "Enabled"
+msgstr ""
+
+#: view/admin-cron.phtml:38
+#@ wptkt
+msgid "Enable this option to use the build-in WordPress-Cron."
+msgstr ""
+
+#: view/admin-cron.phtml:42
+#@ wptkt
+msgid "You can manually trigger the plugin cron jobs using e.g. crontab"
+msgstr ""
+
+#: view/admin-cron.phtml:44
+#@ wptkt
+msgid "(e.g. enter \"*/5\" to minute field) May to define( 'DISABLE_WP_CRON', true ); in your wp-config.php file."
+msgstr ""
+
+#: view/admin-cron.phtml:50
+#@ wptkt
+msgid "Trigger cron manually"
+msgstr ""
+
+#: view/admin-cron.phtml:54
+#@ wptkt
+msgid "Open Website in a new tab"
+msgstr ""
+
+#: view/admin-cron.phtml:57
+#@ wptkt
+msgid "Works only if WordPress-Cron is activated."
+msgstr ""
+
