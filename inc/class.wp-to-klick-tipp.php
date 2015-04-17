@@ -2,27 +2,27 @@
     /**
      * Class WpToKlickTipp
      *
-     * @version 1.0.0
+     * @version 1.0.1
      * @author Tobias B. Conrad <tobiasconrad@leupus.de>, Timo König <dev@timokoenig.de>
      */
     class WpToKlickTipp {
-        
+
         /**
          * Constructor
          */
         public function __construct() {
             $this->loadDependencies();
             $this->addAction();
-            
+
             if (is_admin()) {
                 $this->addAdminActions();
             }
-            
+
             // set cron
             $cronManager = new WpToKlickTippCronManager();
             $cronManager->setScheduleHook();
         }
-        
+
         /**
          * Load dependencies for this class
          *
@@ -35,14 +35,14 @@
             require_once(WP_TO_KLICK_TIPP_DIR . 'inc/class.wp-to-klick-tipp-admin.php');
             require_once(WP_TO_KLICK_TIPP_DIR . 'inc/class.wp-to-klick-tipp-cron-manager.php');
         }
-        
+
         /**
          *
          */
         private function addAction() {
-            add_action('plugins_loaded', array('WpToKlickTipp', 'setLocalization'));
+	    add_action('plugins_loaded', array($this, 'setLocalization'));
         }
-        
+
         /**
          * Set the localization text domain for the plugin
          *
@@ -52,7 +52,7 @@
         public function setLocalization() {
             load_plugin_textdomain('wptkt', false, dirname(plugin_basename(__FILE__)) . '/../languages/');
         }
-        
+
         /**
          * Add some other admin stuff
          *
@@ -63,7 +63,7 @@
             $admin = new WpToKlickTippAdmin();
             $admin->addMenu();
         }
-        
+
         /**
          * Activate the plugin
          *
@@ -75,7 +75,7 @@
             //$cronManager = new WpToKlickTippCronManager();
             //$cronManager->setScheduleHook();
         }
-        
+
         /**
          * Deactivate the plugin
          *

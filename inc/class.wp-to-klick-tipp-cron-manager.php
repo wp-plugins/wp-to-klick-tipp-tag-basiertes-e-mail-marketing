@@ -2,11 +2,11 @@
     /**
      * Class WpToKlickTippCronManager
      *
-     * @version 1.0.0
-     * @author Tobias B. Conrad <tobiasconrad@leupus.de>, Timo Kšnig <dev@timokoenig.de>
+     * @version 1.0.1
+     * @author Tobias B. Conrad <tobiasconrad@leupus.de>, Timo Kï¿½nig <dev@timokoenig.de>
      */
     class WpToKlickTippCronManager {
-        
+
         /**
          * Constructor
          */
@@ -14,7 +14,7 @@
             $this->addFilter();
             $this->addAction();
         }
-        
+
         /**
          * Add Cron Filter
          *
@@ -22,9 +22,9 @@
          * @return void
          */
         private function addFilter() {
-            add_filter('cron_schedules', array('WpToKlickTippCronManager', 'addNewSchedule')); 
+	    add_filter('cron_schedules', array($this, 'addNewSchedule'));
         }
-        
+
         /**
          * Add the WP Cron Action
          *
@@ -34,7 +34,7 @@
         private function addAction() {
             add_action('wpToKlickTippCronAction', 'wpToKlickTippCron');
         }
-        
+
         /**
          * Set the schedule hooks
          *
@@ -46,7 +46,7 @@
                 wp_schedule_event(time(), '6perhour', 'wpToKlickTippCronAction');
             }
         }
-        
+
         /**
          * Clear the schedule hooks
          *
@@ -56,21 +56,21 @@
         public function clearScheduleHook() {
             wp_clear_scheduled_hook('wpToKlickTippCronAction');
         }
-        
+
         /**
          * Add new schedule for wordpress cron
-         * 
+         *
          * @access public
          * @return array
          */
         public function addNewSchedule($schedules) {
-            $hourresult	= '6';	
-            $inttime = 3600 / $hourresult;		
+            $hourresult	= '6';
+            $inttime = 3600 / $hourresult;
             $schedules['6perhour'] = array(
               'interval'=> $inttime,
               'display'=> __($hourresult . 'times/hour', 'wptkt')
             );
-            
+
             return $schedules;
         }
     }

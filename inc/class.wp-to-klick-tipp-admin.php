@@ -2,32 +2,32 @@
     /**
      * Class WpToKlickTippAdmin
      *
-     * @version 1.0.0
-     * @author Tobias B. Conrad <tobiasconrad@leupus.de>, Timo Kšnig <dev@timokoenig.de>
+     * @version 1.0.1
+     * @author Tobias B. Conrad <tobiasconrad@leupus.de>, Timo Kï¿½nig <dev@timokoenig.de>
      */
     class WpToKlickTippAdmin {
-        
+
         /**
          * @var object $instance
          */
         private static $instance = null;
-        
+
         /**
          * @var string $error
          */
         private $error;
-        
+
         /**
          * @var string $message
          */
         private $message;
-        
+
         /**
          * @var string $licenseUrl The URL for the license check
          */
         private $licenseUrl = 'http://www.woocommerce-klick-tipp.com/klicktip-capi/check_license_wp.php';
-        
-        
+
+
         /**
          * Get an instance of this class
          *
@@ -41,7 +41,7 @@
             }
             return self::$instance;
         }
-        
+
         /**
          * Add admin menu action
          *
@@ -49,9 +49,9 @@
          * @return void
          */
         public function addMenu() {
-            add_action('admin_menu', array('WpToKlickTippAdmin', 'addMenuConfig'));
+    	    add_action('admin_menu', array($this, 'addMenuConfig'));
         }
-        
+
         /**
          * Add admin menu page
          *
@@ -59,9 +59,9 @@
          * @return void
          */
         public function addMenuConfig() {
-            add_menu_page(__("WP To Klick-Tipp", 'wptkt'), __("WP To Klick-Tipp", 'wptkt'), "administrator", "wptkt", array('WpToKlickTippAdmin', 'run'));
+            add_menu_page(__("WP To Klick-Tipp", 'wptkt'), __("WP To Klick-Tipp", 'wptkt'), "administrator", "wptkt", array($this, 'run'));
         }
-        
+
         /**
          * Add admin files
          *
@@ -72,12 +72,12 @@
             // css files
             wp_register_style('wptkt-general-css', WP_TO_KLICK_TIPP_URL . 'assets/css/custom-style.css');
             wp_enqueue_style('wptkt-general-css');
-            
+
             // js files
             wp_enqueue_script('jquery');
             wp_enqueue_script('wptkt-general', WP_TO_KLICK_TIPP_URL . 'assets/js/general.js', array(), '1.0.0', true);
         }
-        
+
         /**
          * Run the admin backend
          *
@@ -86,15 +86,15 @@
          */
         public function run() {
             $wptktAdmin = self::getInstance();
-            
+
             // add css/js files
             $wptktAdmin->addFiles();
-            
+
             $wptktAdmin->handleForms();
-            
+
             include(WP_TO_KLICK_TIPP_DIR . 'view/admin.phtml');
         }
-        
+
         /**
          * Get Errors
          *
@@ -104,7 +104,7 @@
         public function getError() {
             return $this->error;
         }
-        
+
         /*
          * Get Messages
          *
@@ -114,7 +114,7 @@
         public function getMessage() {
             return $this->message;
         }
-        
+
         /**
          * Handle the submitted forms
          *
@@ -128,26 +128,29 @@
                     update_option('wptkt_last_export', '');
                     $this->message = __('Time is reset, next cron will update all orders to Klick-Tipp', 'wptkt');
                 }
-                
+
                  // run cron manually
                 if ($_GET['action'] == 'trigger-cron') {
                     include('cron/cron_wordpress.php');
-                    include('cron/cron_woocommerce.php');
+		    // cron-woocommerce if plugin is activated
+		    if (function_exists('woocommerce_get_page_id')) {
+			include('cron/cron_woocommerce.php');
+		    }
                     $this->message = __('You just run the cron manually.', 'wptkt');
                 }
-                
+
                 // Set Klick-Tipp license
                 if ($_GET['action'] == 'save-license') {
                     $licenseEmail = trim($_POST['license-email']);
                     $licenseKey = trim($_POST['license-key']);
-                    
+
                     if ($licenseEmail == '') {
                         $this->error = __('Please enter your email address.', 'wptkt');
                     } else if ($licenseKey == '') {
                         $this->error = __('Please enter your license key.', 'wptkt');
                     } else {
                         $datastring = 'license_email=' . $licenseEmail . '&license_key=' . $licenseKey . '&site_url=' . site_url();
-                        
+
                         if ($this->checkLicense($datastring)) {
                             update_option('wptkt_license_email', $licenseEmail);
                             update_option('wptkt_license_key', $licenseKey);
@@ -157,10 +160,10 @@
                         }
                     }
                 }
-                
+
                 // Set Klick-Tipp account data
                 if ($_GET['action'] == 'save-account') {
-                    
+
                     // save klick-tipp api
                     if (isset($_POST['account-api'])) {
                         $apiValue = trim($_POST['account-api']);
@@ -169,7 +172,7 @@
                             update_option('wptkt_klicktipp_api', $apiValue);
                         }
                     }
-                    
+
                     $klicktippUsername = trim($_POST['account-username']);
                     $klicktippPassword = trim($_POST['account-password']);
                     if ($klicktippUsername == '') {
@@ -187,25 +190,25 @@
                         }
                     }
                 }
-                
+
                 // Save Cron Settings
                 if ($_GET['action'] == 'save-cron-setting') {
-                    
+
                     // activate wordpress cron
                     if (isset($_POST['wptkt_wordpress_cron']) && $_POST['wptkt_wordpress_cron'] == 1) {
                         update_option('wptkt_wordpress_cron', 1);
                     } else {
                         update_option('wptkt_wordpress_cron', 0);
                     }
-                    
+
                     $this->message = __('Cron Settings Saved Successfully', 'wptkt');
                 }
-                
+
                 // Set Double-Opt-In-Process-Id
                 if ($_GET['action'] == 'save-role-setting') {
-                    
+
                     $roles = $this->getUserRoles();
-                    
+
                     foreach ($roles AS $slug => $role) {
                         $roleEnabled = trim($_POST[$slug . '_enabled']);
                         if (isset($roleEnabled) && $roleEnabled == 1) {
@@ -223,7 +226,7 @@
                 }
             }
         }
-        
+
         /**
          * Check if the user has as active premium license
          *
@@ -235,10 +238,10 @@
             $ch = curl_init($this->licenseUrl);
             curl_setopt($ch, CURLOPT_POST, true);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);	
-            $response = curl_exec($ch);		
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($ch);
             curl_error($ch);
-            
+
             $jsonObj = json_decode($response);
             if (is_object($jsonObj)) {
                 if ($jsonObj->check == 1) {
@@ -247,7 +250,7 @@
             }
             return false;
         }
-        
+
         /**
          * Check if a connection to klick-tipp is established
          *
@@ -257,10 +260,10 @@
         public function isApiConnected() {
             $klicktip_username = get_option('wptkt_klicktipp_username');
             $klicktip_password = get_option('wptkt_klicktipp_password');
-            
+
             return $this->connectToKlickTipp($klicktip_username, $klicktip_password);
         }
-        
+
         /**
          * Connect to the Klick-Tipp API
          *
@@ -276,11 +279,11 @@
             } else {
                 $apiUrl = 'http://api.klick-tipp.com';
             }
-            
+
             $connector = new KlicktippConnector($apiUrl);
             return $connector->login($username, $password);
         }
-        
+
         /**
          * Get plugin navigation
          *
@@ -310,7 +313,7 @@
                     'name' => __('Role Settings', 'wptkt')
                 ),
             );
-            
+
             // set active class
             $mod = $_GET['mod'];
             if (isset($mod)) {
@@ -326,10 +329,10 @@
             } else {
                 $nav['license']->class = 'nav-tab nav-tab-active';
             }
-            
+
             return $nav;
         }
-        
+
         /**
          * Get the time of the last sync to Klick-Tipp
          *
@@ -340,20 +343,20 @@
             $last_updated_date = trim(get_option('wptkt_last_export'));
             if ($last_updated_date == '') {
                 return __("Not transferred any data to Klick-Tipp.", 'wptkt');
-            } else {	
+            } else {
                 /* get gmt offset */
                 $gmt_offset	=	get_option('gmt_offset');
                 if ($gmt_offset!='') {
                     $gmt_offset = get_option('gmt_offset');
                     $explode_time = explode('.', $gmt_offset);
                     $matched = strpos($explode_time[0], "-");
-                    
+
                     if (trim($matched) === '') {
                         $min_sign = '+';
                     } else {
                         $min_sign = '-';
                     }
-                    
+
                     if (!empty($explode_time[1])) {
                         if ($explode_time[1] == '5') {
                             $min = '30';
@@ -365,15 +368,15 @@
                     } else {
                         $min = '0';
                     }
-                    
+
                     return date("Y-m-d H:i:s",strtotime($explode_time[0]." hours ".$min_sign.$min." min",$last_updated_date));
-                    
+
                 } else {
-                    return date("Y-m-d H:i:s",$last_updated_date); 
+                    return date("Y-m-d H:i:s",$last_updated_date);
                 }
-            }	
+            }
         }
-        
+
         /**
          * Get the Klick-Tipp License Version
          *
@@ -382,14 +385,14 @@
          */
         public function getVersion() {
             $version = __('Free Version, <a target="_blank" href="http://woocommerce-klick-tipp.com">Upgrade to Pro to get full data sync</a>', 'wptkt');
-            
+
             if ($this->isPremium()) {
                 $version = __('Premium Version', 'wptkt');
             }
-            
+
             return $version;
         }
-        
+
         /**
          * Check if the user has a premium license
          *
@@ -405,7 +408,7 @@
             }
             return false;
         }
-        
+
         /**
          * Get user roles from wordpress
          *
@@ -423,7 +426,7 @@
             }
             return $roles;
         }
-        
+
         /**
          * Get api select array
          *
@@ -439,12 +442,12 @@
                     'name' => __('Brasil', 'wptkt')
                 )
             );
-            
-            $apiValue = get_option('wptkt_klicktipp_api');
+
+            $apiValue = get_option('wptkt_klicktipp_api','');
             if (array_key_exists($apiValue, $apiValues)) {
                 $apiValues[$apiValue]->selected = 'selected="selected"';
             }
-            
+
             return $apiValues;
         }
     }
