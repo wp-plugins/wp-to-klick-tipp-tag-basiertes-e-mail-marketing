@@ -3,7 +3,7 @@
      * Plugin Name:       Wordpress to Klick-Tipp
      * Plugin URI:
      * Description:       Sync user data between Wordpress / WooCommerce and Klick-Tipp (tag based e-mail marketing)
-     * Version:           1.0.1
+     * Version:           1.1
      * Author:            Tobias B. Conrad
      * Author URI:        http://www.woocommerce-klick-tipp.com
      * License:           GPL v3
@@ -34,7 +34,7 @@
         die();
     }
 
-    define('WP_TO_KLICK_TIPP_VERSION', '1.0.1');
+    define('WP_TO_KLICK_TIPP_VERSION', '1.1');
     define('WP_TO_KLICK_TIPP_DIR', plugin_dir_path(__FILE__));
     define('WP_TO_KLICK_TIPP_URL', plugin_dir_url(__FILE__));
 
