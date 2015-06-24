@@ -1,0 +1,31 @@
+<form action="admin.php?page=wptkt&mod=role-setting&action=save-role-setting" method="post">
+    <div class="updated">
+        <p><?php _e('You want to enter a role based double opt-in ID? Get a premium license.', 'wptkt'); ?></p>
+    </div>
+    <table cellspacing="0" class="wptkt_table widefat">
+        <thead>
+            <tr>
+                <th colspan="3"><?php _e('Role Settings', 'wptkt'); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b><?php _e('Role', 'wptkt'); ?></b></td>
+                <td class="text-center"><b><?php _e('Enable', 'wptkt'); ?></b></td>
+            </tr>
+            <?php foreach ($wptktAdmin->getUserRoles() AS $roleSlug => $role) : ?>
+                <tr>
+                    <td>
+                        <?php echo $role['name']; ?>
+                    </td>
+                    <td class="text-center">
+                        <input type="checkbox" name="<?php echo $roleSlug; ?>_enabled" value="1" <?php echo get_option('wptkt_role_' . $roleSlug) == '1' ? 'checked' : ''; ?> />
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+    <p class="submit">
+        <input type="submit" value="<?php _e('Save Changes', 'wptkt'); ?>" class="button-primary" />
+    </p>
+</form>

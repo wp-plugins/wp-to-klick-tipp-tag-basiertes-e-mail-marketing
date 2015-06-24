@@ -1,0 +1,63 @@
+<div class="container clearfix">
+    <div class="col-fifty-fifty">
+        <h3><?php _e('Klick-Tipp Account', 'wptkt'); ?></h3>
+        <form action="admin.php?page=wptkt&mod=account&action=save-account" method="post">
+            <table class="form-table">
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            <label for="api"><?php _e('API', 'wptkt'); ?></label>
+                        </th>
+                        <td>
+                            <select name="account-api">
+                                <?php foreach($wptktAdmin->getApiSelect() AS $key => $apiValue) : ?>
+                                    <option value="<?php echo $key; ?>" <?php echo $apiValue->selected; ?>>
+                                        <?php echo $apiValue->name; ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label for="account-username"><?php _e('Username', 'wptkt'); ?></label>
+                        </th>
+                        <td>
+                            <input type="text" name="account-username" value="<?php echo get_option('wptkt_klicktipp_username'); ?>" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label for="account-password"><?php _e('Password', 'wptkt'); ?></label>
+                        </th>
+                        <td>
+                            <input type="password" name="account-password" value="<?php echo get_option('wptkt_klicktipp_password'); ?>" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label for="account-apikey"><?php _e('API key', 'wptkt'); ?></label>
+                        </th>
+                        <td>
+                            <input type="text" name="account-apikey" value="<?php echo get_option('wptkt_klicktipp_apikey'); ?>" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="submit">
+                <input type="submit" value="<?php _e('Save Account', 'wptkt'); ?>" class="button-primary" />
+            </p>
+        </form>
+    </div>
+    <div class="col-fifty-fifty">
+        <h3><?php _e('You don\'t have an Klick-Tipp Account?', 'wptkt'); ?></h3>
+        <p>
+            <a class="button" title="Klick-Tipp Account" href="https://www.splittest-club.com/club/splittest.php?test=13165" target="_blank" rel="nofollow"><?php _e('Get a new Account', 'wptkt'); ?></a>
+        </p>
+        <p>
+            <b><?php _e('Special Offer', 'wptkt'); ?>:</b><br />
+            <?php _e('Extrem reduced Klick-Tipp Versions when you finish the webinar.', 'wptkt'); ?><br />
+            <a  class="button" title="Klick-Tipp Webinar" href="https://www.splittest-club.com/club/splittest.php?test=13168" target="_blank" rel="nofollow"><?php _e('Watch Webinar', 'wptkt'); ?></a>
+        </p>
+    </div>
+</div>

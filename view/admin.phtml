@@ -1,0 +1,44 @@
+<div id="wptkt">
+    <h1><?php _e('WordPress to <span>Klick-Tipp Bridge</span>', 'wptkt'); ?></h1>
+    <?php
+        if (!$wptktAdmin->isApiConnected()) {
+            echo '<div class="error"><p>' . __('Sync is deactivated. Enter your correct Klick-Tipp credentials.', 'wptkt') . '</p></div>';
+        }
+    ?>
+    <div class="hangout_activated">
+        <h2 class="nav-tab-wrapper woo-nav-tab-wrapper">
+            <?php foreach ($wptktAdmin->getNavigation() AS $nav) : ?>
+                <a class="<?php echo $nav->class; ?>" href="<?php echo $nav->href; ?>"><?php echo $nav->name; ?></a>
+            <?php endforeach; ?>
+        </h2>
+        <?php
+			$error = $wptktAdmin->getError();
+			if ($error) {
+				echo '<div class="error"><p>'.$error.'</p></div>';	
+			}
+			$message = $wptktAdmin->getMessage();
+			if ($message) {
+				echo '<div class="updated"><p>'.$message.'</p></div>';	
+			}
+
+			// include panels
+			if (array_key_exists('mod', $_GET)) {
+				if ($_GET['mod'] == 'account') {
+					include(WP_TO_KLICK_TIPP_DIR . 'view/admin-account.phtml');
+				} else if ($_GET['mod'] == 'role-setting') {
+					include(WP_TO_KLICK_TIPP_DIR . 'view/admin-role.phtml');
+				} else if ($_GET['mod'] == 'export') {
+					include(WP_TO_KLICK_TIPP_DIR . 'view/admin-export.phtml');
+				} else if ($_GET['mod'] == 'log-view') {
+					include(WP_TO_KLICK_TIPP_DIR . 'view/admin-log.phtml');
+				} else if ($_GET['mod'] == 'requirement') {
+					include(WP_TO_KLICK_TIPP_DIR . 'view/admin-requirement.phtml');
+				} else {
+					include(WP_TO_KLICK_TIPP_DIR . 'view/admin-license.phtml');
+				}
+			} else {
+				include(WP_TO_KLICK_TIPP_DIR . 'view/admin-license.phtml');
+			}
+		?>
+    </div>
+</div>

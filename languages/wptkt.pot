@@ -1,0 +1,365 @@
+# Loco Gettext template
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Wordpress to Klick-Tipp\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Sat Jun 13 2015 10:03:53 GMT+0200 (Mitteleuropäische "
+"Sommerzeit)\n"
+"POT-Revision-Date: Wed Jun 24 2015 15:09:05 GMT+0200 (Mitteleuropäische "
+"Sommerzeit)\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: ../wp-to-klick-tipp.php:45
+msgid "Wordpress to Klick-Tipp"
+msgstr ""
+
+#: ../wp-to-klick-tipp.php:105
+msgid "Until you have not set up your API credentials you cannot use "
+msgstr ""
+
+#: ../wp-to-klick-tipp.php:111
+msgid "Please install PHP version 5.4 or above on your server."
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:57 ../inc/class.wp-to-klick-tipp-admin.
+#: php:57
+msgid "WP To Klick-Tipp"
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:125
+msgid "License key deleted successfully"
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:126
+msgid "WPtoKT license key deleted"
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:133
+msgid "Please enter your email address."
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:135
+msgid "Please enter your license key."
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:142
+msgid "Saved successfully"
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:143
+msgid "Credentials (email and/or key) changed"
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:145 ../inc/class.wp-to-klick-tipp-
+#: admin.php:146
+msgid "Wrong API Credentials"
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:168
+msgid "Please enter your Klick-Tipp username."
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:170
+msgid "Please enter your Klick-Tipp password."
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:172
+msgid "Please check your Klick-Tipp API key."
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:179 ../inc/class.wp-to-klick-tipp-
+#: admin.php:180
+msgid "Klick-Tipp Account Saved Successfully"
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:182 ../inc/class.wp-to-klick-tipp-
+#: admin.php:183
+msgid "Wrong Klick-Tipp Credentials"
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:263 ../view/admin-license.phtml:3
+msgid "License"
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:268 ../view/admin-account.phtml:3
+msgid "Klick-Tipp Account"
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:273 ../view/admin-export.phtml:9
+msgid "CSV Export"
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:278 ../view/admin-role.phtml:8
+msgid "Role Settings"
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:283 ../view/admin-log.phtml:4
+msgid "Log View"
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:288
+msgid "Requirement"
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:324
+msgid ""
+"Free Version, <a target=\"_blank\" href=\"http://woocommerce-klick-tipp."
+"com\">Upgrade to Pro to get full data sync</a>"
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:349
+msgid "Germany"
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:352
+msgid "Brasil"
+msgstr ""
+
+#: ../inc/class.wp-to-klick-tipp-admin.php:461
+msgid "All log data deleted."
+msgstr ""
+
+#: ../inc/class.ioncube-tester.php:26
+msgid ""
+"are available on this web server. You can start the installation of our "
+"premium version"
+msgstr ""
+
+#: ../inc/class.ioncube-tester.php:31
+msgid ""
+"IonCube loaders are <span style=\"color:red;\">not available</span> on this "
+"web server."
+msgstr ""
+
+#: ../inc/class.ioncube-tester.php:32
+msgid "Please click here to start the installation wizard"
+msgstr ""
+
+#: ../inc/class.ioncube-tester.php:33
+msgid ""
+"which offers an interactive tutorial on how to install the required \"ionCube "
+"Loader\" on your web server."
+msgstr ""
+
+#: ../inc/class.ioncube-tester.php:36
+#, php-format
+msgid ""
+"You already ran the <a href=\"%1s\" target=\"_blank\">ioncube installation "
+"wizard</a> and copied the created php.ini file to "
+"<strong>%2s</strong><br/>To finish the ioncube installation, please also "
+"copy the file <strong>php.ini</strong> to the directory "
+"<strong>%3s</strong><br/>Afterwards the ioncube installation is finished and "
+"this admin message should turn green."
+msgstr ""
+
+#: ../view/admin.phtml:2
+msgid "WordPress to <span>Klick-Tipp Bridge</span>"
+msgstr ""
+
+#: ../view/admin.phtml:5
+msgid "Sync is deactivated. Enter your correct Klick-Tipp credentials."
+msgstr ""
+
+#: ../view/admin-log.phtml:10
+msgid "See the last entries from the log file."
+msgstr ""
+
+#: ../view/admin-log.phtml:18
+msgid "Time"
+msgstr ""
+
+#: ../view/admin-log.phtml:19
+msgid "Module"
+msgstr ""
+
+#: ../view/admin-log.phtml:20
+msgid "Message"
+msgstr ""
+
+#: ../view/admin-log.phtml:39
+msgid "Delete All"
+msgstr ""
+
+#: ../view/admin-export.phtml:3
+msgid ""
+"You want to sync WooCommerce products, categories, order status updates... ? "
+"Get a \"WP to Klick-Tipp\" premium license."
+msgstr ""
+
+#: ../view/admin-export.phtml:15
+msgid ""
+"For future data sync you can use the action based sync via the "
+"plugin</br></br>You can import your existing data directly into Klick-Tipp. "
+"(Klick-Tipp Enterprise Version needed)<br>If you do not have a Klick-Tipp "
+"Enterprise Version, please contact the support at <a href=\"mailto:"
+"hilfe@klick-tipp.com\">hilfe@klick-tipp.com.</a></br>Please add the below "
+"generated file to your request.</br>Please watch our Tutorials in the <a "
+"href=\"http://woocommerce-klick-tipp.com/mitgliederbereich/?"
+"utm_campaign=plugin-eng\" target=\"_blank\">WPtoKT member area."
+"</a></br></br>Here you can get your CSV file:"
+msgstr ""
+
+#: ../view/admin-export.phtml:20
+msgid "Last CSV Export"
+msgstr ""
+
+#: ../view/admin-export.phtml:23
+msgid "never"
+msgstr ""
+
+#: ../view/admin-export.phtml:28
+msgid "Export"
+msgstr ""
+
+#: ../view/admin-export.phtml:32 ../view/admin-export.phtml:42
+msgid "selection not possible"
+msgstr ""
+
+#: ../view/admin-export.phtml:38
+msgid "Which data?"
+msgstr ""
+
+#: ../view/admin-export.phtml:48
+msgid ""
+"If you want to export your order information, user data for Klick-Tipp into "
+"a CSV file, please get a \"WP to Klick-Tipp\" premium license."
+msgstr ""
+
+#: ../view/admin-requirement.phtml:4
+msgid "Check the software requirements"
+msgstr ""
+
+#: ../view/admin-requirement.phtml:9
+msgid "check your software requirements to use all of the plugins functionality."
+msgstr ""
+
+#: ../view/admin-requirement.phtml:15
+msgid "WooCommerce is activated"
+msgstr ""
+
+#: ../view/admin-requirement.phtml:19
+msgid "PHP version"
+msgstr ""
+
+#: ../view/admin-requirement.phtml:27
+msgid "IonCube Loader<br >(you need it to run our premium version)"
+msgstr ""
+
+#: ../view/admin-account.phtml:9
+msgid "API"
+msgstr ""
+
+#: ../view/admin-account.phtml:23
+msgid "Username"
+msgstr ""
+
+#: ../view/admin-account.phtml:31
+msgid "Password"
+msgstr ""
+
+#: ../view/admin-account.phtml:39
+msgid "API key"
+msgstr ""
+
+#: ../view/admin-account.phtml:48
+msgid "Save Account"
+msgstr ""
+
+#: ../view/admin-account.phtml:53
+msgid "You don't have an Klick-Tipp Account?"
+msgstr ""
+
+#: ../view/admin-account.phtml:55
+msgid "Get a new Account"
+msgstr ""
+
+#: ../view/admin-account.phtml:58
+msgid "Special Offer"
+msgstr ""
+
+#: ../view/admin-account.phtml:59
+msgid "Extrem reduced Klick-Tipp Versions when you finish the webinar."
+msgstr ""
+
+#: ../view/admin-account.phtml:60
+msgid "Watch Webinar"
+msgstr ""
+
+#: ../view/admin-role.phtml:3
+msgid "You want to enter a role based double opt-in ID? Get a premium license."
+msgstr ""
+
+#: ../view/admin-role.phtml:13
+msgid "Role"
+msgstr ""
+
+#: ../view/admin-role.phtml:14
+msgid "Enable"
+msgstr ""
+
+#: ../view/admin-role.phtml:29
+msgid "Save Changes"
+msgstr ""
+
+#: ../view/admin-license.phtml:5
+msgid ""
+"Free Version, <a href=\"http://woocommerce-klick-tipp.com/wptokt-"
+"verkaufsseite/?utm_campaign=plugin-backend-opensource-eng\" "
+"target=\"_blank\">Upgrade to Pro to get full data sync</a>"
+msgstr ""
+
+#: ../view/admin-license.phtml:11
+msgid "Get Premium License"
+msgstr ""
+
+#: ../view/admin-license.phtml:12
+msgid ""
+"To activate the Premium Version you need to download the free/Premium Plugin "
+"Version here:"
+msgstr ""
+
+#: ../view/admin-license.phtml:13
+msgid ""
+"<a href=\"http://woocommerce-klick-tipp.com/wptokt-verkaufsseite/?"
+"utm_campaign=plugin-backend-opensource-eng\" target=\"_blank\" "
+"class=\"button\">free/Premium Version</a>"
+msgstr ""
+
+#: ../view/admin-license.phtml:14
+msgid ""
+"After Download: Please deinstall this version and install the downloaded "
+"version.<br>No data will be lost."
+msgstr ""
+
+#: ../view/admin-license.phtml:17
+msgid "Free Member Area"
+msgstr ""
+
+#: ../view/admin-license.phtml:18
+msgid ""
+"Use our free member area to get video tutorials, downloads and exchange with "
+"other users."
+msgstr ""
+
+#: ../view/admin-license.phtml:19
+msgid ""
+"<a href=\"http://woocommerce-klick-tipp.com/?utm_campaign=plugin-backend-"
+"opensource-eng\" target=\"_blank\" class=\"button\">Get access now</a>"
+msgstr ""

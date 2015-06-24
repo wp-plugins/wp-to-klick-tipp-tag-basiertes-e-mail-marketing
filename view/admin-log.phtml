@@ -1,0 +1,44 @@
+<table cellspacing="0" class="wptkt_table widefat">
+    <thead>
+        <tr>
+            <th><?php _e('Log View', 'wptkt'); ?></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td	>
+                <?php _e('See the last entries from the log file.', 'wptkt'); ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table cellspacing="0" class="wptkt_table widefat">
+                    <thead>
+                        <tr>
+                            <th><?php _e('Time', 'wptkt'); ?></th>
+                            <th><?php _e('Module', 'wptkt'); ?></th>
+                            <th><?php _e('Message', 'wptkt'); ?></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    foreach ($wptktAdmin->getLog() as $key => $aLog) {
+						echo '<tr>';
+						echo '<td>'.$aLog['time'].'</td>';
+						echo '<td>'.$aLog['module'].'</td>';
+						echo '<td>'.$aLog['text'].'</td>';
+						echo '</tr>';
+					} ?>
+                    </tbody><tbody>
+                </tbody></table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form action="admin.php?page=wptkt&mod=log-view&action=flush-log-db" method="post">
+                    <p class="submit"><input type="submit" value="<?php _e('Delete All', 'wptkt'); ?>" class="button-primary" /></p>
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>

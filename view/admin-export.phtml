@@ -1,0 +1,50 @@
+<div class="updated">
+    <p><?php _e('You want to sync WooCommerce products, categories, order status updates... ? Get a "WP to Klick-Tipp" premium license.', 'wptkt'); ?></p>
+</div>
+<table cellspacing="0" class="wptkt_table widefat">
+    <thead>
+        <tr>
+            <th colspan="2"><?php _e('CSV Export', 'wptkt'); ?></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2">
+                <?php _e('For future data sync you can use the action based sync via the plugin</br></br>You can import your existing data directly into Klick-Tipp. (Klick-Tipp Enterprise Version needed)<br>If you do not have a Klick-Tipp Enterprise Version, please contact the support at <a href="mailto:hilfe@klick-tipp.com">hilfe@klick-tipp.com.</a></br>Please add the below generated file to your request.</br>Please watch our Tutorials in the <a href="http://woocommerce-klick-tipp.com/mitgliederbereich/?utm_campaign=plugin-eng" target="_blank">WPtoKT member area.</a></br></br>Here you can get your CSV file:', 'wptkt'); ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <?php _e('Last CSV Export', 'wptkt'); ?>
+            </td>
+            <td>
+                <p><?php _e('never', 'wptkt'); ?></p>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label for="download-depth"><?php _e('Export', 'wptkt'); ?></label>
+            </th>
+            <td>
+                <select name="download-depth">
+                    <option value="download-all"><?php _e('selection not possible', 'wptkt'); ?></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label for="download-value"><?php _e('Which data?', 'wptkt'); ?></label>
+            </th>
+            <td>
+                <select name="download-value">
+                    <option value="download-all"><?php _e('selection not possible', 'wptkt'); ?></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <b><?php _e('If you want to export your order information, user data for Klick-Tipp into a CSV file, please get a "WP to Klick-Tipp" premium license.', 'wptkt'); ?></b>
+            </td>
+        </tr>
+    </tbody>
+</table>
